@@ -1,0 +1,16 @@
+#!/bin/bash
+set -e
+
+# Create vpn-node user if it doesn't exist
+if ! id -u vpn-node > /dev/null 2>&1; then
+    useradd --system --shell /bin/false vpn-node
+fi
+
+# Set permissions
+chown -R vpn-node:vpn-node /opt/vpn-node
+
+# Reload systemd and enable service
+systemctl daemon-reload
+systemctl enable vpn-node.service
+
+echo "VPN Node installed successfully."

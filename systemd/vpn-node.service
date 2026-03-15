@@ -1,0 +1,15 @@
+[Unit]
+Description=VPN Node Daemon
+After=network.target
+
+[Service]
+Type=simple
+User=vpn-node
+Group=vpn-node
+WorkingDirectory=/opt/vpn-node
+ExecStart=/usr/bin/python3 /opt/vpn-node/main.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
