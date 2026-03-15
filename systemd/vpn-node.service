@@ -6,8 +6,8 @@ After=network.target
 Type=simple
 User=vpn-node
 Group=vpn-node
-WorkingDirectory=/opt/vpn-node
-ExecStart=/usr/bin/python3 /opt/vpn-node/main.py
+WorkingDirectory=/opt/nakolenke-vpn-node
+ExecStart=/usr/bin/python3 /opt/nakolenke-vpn-node/main.py
 Restart=always
 RestartSec=5
 
